@@ -15,11 +15,12 @@ st.set_page_config(page_title = 'Simple ChatBot', layout = 'centered')
 st.title("Simple ChatBot")
 st.write ("Powered by Google Generative AI")
 
+with st.form(key = "chat_form", clear_on_submit = True):
+    user_input = st.text_input("", max_chars= 2000)
+    submit_button = st.form_submit_button("send")
+    if submit_button:
+        if user_input:
+            response = get_chatbot_response(user_input)
+        else:
+            st.warning("Please Enter a Prompt")
 
-
-if st.button("Response"):
-    if user_input:
-        output = getResponseFromModel(user_input)
-        st.write(f"Chatbot Response: {output}")
-    else:
-        st.write("Please enter a prompt.")
