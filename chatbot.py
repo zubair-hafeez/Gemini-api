@@ -10,9 +10,13 @@ def getResponseFromModel(user_input):
     response = model.generate_content(user_input)
     return response.text
 
+st.set_page_config(page_title = 'Simple ChatBot', layout = 'centered')
+
 st.title("Simple ChatBot")
-st.write ("It uses Google API key")
-user_input = st.text_input("Enter your prompt:")
+st.write ("Powered by Google Generative AI")
+
+
+
 if st.button("Response"):
     if user_input:
         output = getResponseFromModel(user_input)
