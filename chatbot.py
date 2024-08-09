@@ -12,8 +12,3 @@ def getResponseFromModel(user_input):
 
 st.title("Simple ChatBot")
 st.write ("It uses Google API key")
-
-user_input = input ('Enter your Prompt = ')
-output = getResponseFromModel(user_input)
-
-print(output)
