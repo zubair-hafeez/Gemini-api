@@ -21,6 +21,7 @@ with st.form(key = "chat_form", clear_on_submit = True):
     if submit_button:
         if user_input:
             response = get_chatbot_response(user_input)
+            st.write(response)
         else:
             st.warning("Please Enter a Prompt")
-
+output
