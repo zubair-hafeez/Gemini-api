@@ -6,7 +6,7 @@ genai.configure(api_key= GOOGLE_API_KEY)
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-def getResponseFromModel(user_input):
+def get_chatbot_response(user_input):
     response = model.generate_content(user_input)
     return response.text
 
@@ -24,4 +24,3 @@ with st.form(key = "chat_form", clear_on_submit = True):
             st.write(response)
         else:
             st.warning("Please Enter a Prompt")
-output
