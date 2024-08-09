@@ -12,3 +12,10 @@ def getResponseFromModel(user_input):
 
 st.title("Simple ChatBot")
 st.write ("It uses Google API key")
+user_input = st.text_input("Enter your prompt:")
+if st.button("Response"):
+    if user_input:
+        output = getResponseFromModel(user_input)
+        st.write(f"Chatbot Response: {output}")
+    else:
+        st.write("Please enter a prompt.")
